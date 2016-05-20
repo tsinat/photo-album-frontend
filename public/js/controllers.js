@@ -67,12 +67,19 @@ app.controller('albumDetailCtrl', function($scope, name, Album, Img) {
                 console.log('albumId', albumId);
                 var imageId = res._id;
                 Album.addImageToAlbum(albumId, imageId)
+                getOne(imageId);
             })
             .catch(err => {
                 console.log(err);
             })
     }
 
+    function getOne(id){
+        Img.getOne(id)
+            .then(res => {
+                $scope.images = name.data.images;
+            })
+    }
 
 });
 
@@ -97,11 +104,43 @@ app.controller('imageCtrl', function($scope, Img, $state) {
     $scope.hideForm = () => {
         $scope.showadd = false;
     }
+    $scope.addImage = image => {
+        Img.create(image)
+            .then(res => {
+                getImages();
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
 });
-app.controller('imageDetailCtrl', function($scope, name) {
+app.controller('imageDetailCtrl', function($scope, name, Img) {
     console.log('imageDetailCtrl');
     $scope.image = name.data;
+    $scope.deleteImage = id => {
+        console.log(id);
+        Img.delete(id)
+            .then(res => {
+                getImages();
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    };
+
+    function getImages() {
+        Img.getAll()
+            .then(res => {
+                $scope.images = res.data;
+            })
+            .catch(err => {
+                console.log('err:', err);
+            })
+
+    }
 });
+
+
 app.controller('registerCtrl', function() {
     console.log('registerCtrl');
 });

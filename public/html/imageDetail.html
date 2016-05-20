@@ -1,8 +1,11 @@
 <div class='container '>
-    <img class='img-large' ng-src={{image.url}} alt="" />
-    <p>
-        {{image.description}}
-    </p>
+    <div class="text-center">
+        <img class='img-large' ng-src={{image.url}} alt="" />
+        <p>
+            {{image.description}}
+        </p>
+        <button class='btn btn-danger' ><span class='glyphicon glyphicon-remove-sign' ng-click='deleteImage(image._id)'></span></button>
+    </div>
 
 
 

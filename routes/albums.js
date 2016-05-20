@@ -54,8 +54,8 @@ router.delete('/:id',  (req, res) => {
 });
 
 router.put('/:albumId/addImage/:imageId', (req, res) => {
-    console.log(albumId, imageId)
-    Album.addImage(req.params.AlbumId, req.params.ImageId, (err, addedImage)=> {
+    // console.log(albumId, imageId)
+    Album.addImage(req.params.albumId, req.params.imageId, (err, addedImage)=> {
         if(err) res.status(400).send(err);
 
         res.send(addedImage);
