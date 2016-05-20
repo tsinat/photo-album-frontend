@@ -1,0 +1,6 @@
+<div class='container '>
+    <div ng-repeat='album in albums' class='album-container' ui-sref='albumDetail({id:album._id})'>
+    <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span>
+    <h3>{{album.name}}</h3>
+    </div>
+</div>

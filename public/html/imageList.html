@@ -1,0 +1,9 @@
+<div class='container '>
+    <div class="row">
+        <div class="col-xs-3" ng-repeat='image in images' ui-sref='imageDetail({id: image._id})'>
+            <p>{{image.url}}</p>
+            <p>{{image.description}}</p>
+        </div>
+        <hr>
+    </div>
+</div>

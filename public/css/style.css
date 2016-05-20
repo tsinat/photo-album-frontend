@@ -1,0 +1,24 @@
+.btn-group-lg>.btn, .btn-lg{
+    border-radius: 0;
+    background-color: inherit;
+    color: silver;
+}
+.navbar{
+    border-radius: 0;
+}
+.btn-home {
+    padding: 10px 80px;
+    border-radius: 5px;
+
+}
+.glyphicon-folder-open{
+    font-size: 4em;
+}
+.album-container{
+    width: 33%;
+    float:left;
+    /*color: skyblue;*/
+}
+.btn-add {
+    margin-top:40px;
+}
