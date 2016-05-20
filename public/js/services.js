@@ -19,8 +19,12 @@ app.service('Album', function($http) {
     this.delete = id => {
         return $http.delete(`/api/albums/${id}`)
     };
+    this.addImageToAlbum = (albumId, imageId) => {
+        console.log('working')
+        return $http.put(`/api/albums/${albumId}/addImage/${imageId}`)
+    }
 });
-app.service('Image', function($http) {
+app.service('Img', function($http, $q) {
 
     this.getAll = () => {
         return $http.get('/api/images/')
@@ -30,6 +34,12 @@ app.service('Image', function($http) {
     };
     this.create = image => {
         return $http.post('/api/images/', image)
+            .then(res => {
+                return $q.resolve(res.data);
+            })
+            .catch(res => {
+                return $q.reject(res.data);
+            });
     };
     this.update = (id, image) => {
         return $http.put(`/api/images/${id}`, image)

@@ -45,9 +45,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: '/html/imageDetail.html',
             controller: 'imageDetailCtrl',
             resolve: {
-                name: function(Image, $stateParams) {
+                name: function(Img, $stateParams) {
                     console.log($stateParams.id);
-                    return Image.getOne($stateParams.id);
+                    return Img.getOne($stateParams.id);
                 }
             }
         })

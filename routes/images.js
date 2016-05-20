@@ -24,6 +24,7 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', (req, res) => {
+    console.log(req.body);
     Image.create(req.body, (err, image) => {
         if (err) {
             res.status(400).send(err);
