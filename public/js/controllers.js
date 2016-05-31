@@ -2,7 +2,7 @@
 
 var app = angular.module('photoApp')
 
-app.controller('mainCtrl', function(){
+app.controller('mainCtrl', function() {
 
 });
 
@@ -74,7 +74,7 @@ app.controller('albumDetailCtrl', function($scope, name, Album, Img) {
             })
     }
 
-    function getOne(id){
+    function getOne(id) {
         Img.getOne(id)
             .then(res => {
                 $scope.images = name.data.images;

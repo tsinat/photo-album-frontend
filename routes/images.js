@@ -44,7 +44,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id',(req, res) => {
+router.delete('/:id', (req, res) => {
     Image.deleteImage(req.params.id, (err, deletedImage) => {
         if (err) {
             res.status(400).send(err);
@@ -55,8 +55,8 @@ router.delete('/:id',(req, res) => {
 });
 
 router.put('/:imageId/addAlbum/:AlbumId', (req, res) => {
-    Image.addAlbum(req.params.imageId, req.params.AlbumId, req.body, (err, hightestBid)=> {
-        if(err) res.status(400).send(err);
+    Image.addAlbum(req.params.imageId, req.params.AlbumId, req.body, (err, hightestBid) => {
+        if (err) res.status(400).send(err);
 
         res.send(hightestBid);
     });

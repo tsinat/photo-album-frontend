@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id',  (req, res) => {
+router.put('/:id', (req, res) => {
     Album.update(req.params.id, req.body, (err, updatedAlbum) => {
         if (err) {
             res.status(400).send(err);
@@ -43,7 +43,7 @@ router.put('/:id',  (req, res) => {
     });
 });
 
-router.delete('/:id',  (req, res) => {
+router.delete('/:id', (req, res) => {
     Album.deleteAlbum(req.params.id, (err, deletedAlbum) => {
         if (err) {
             res.status(400).send(err);
@@ -55,8 +55,8 @@ router.delete('/:id',  (req, res) => {
 
 router.put('/:albumId/addImage/:imageId', (req, res) => {
     // console.log(albumId, imageId)
-    Album.addImage(req.params.albumId, req.params.imageId, (err, addedImage)=> {
-        if(err) res.status(400).send(err);
+    Album.addImage(req.params.albumId, req.params.imageId, (err, addedImage) => {
+        if (err) res.status(400).send(err);
 
         res.send(addedImage);
     });

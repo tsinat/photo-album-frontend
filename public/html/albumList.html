@@ -1,18 +1,18 @@
 <div class='container '>
     <div class="row">
-      <div class="col-xs-4">
-          <button class="btn btn-primary " ng-click='showForm()'>Create New Album</button>
-      </div>
-      <div class="col-xs-8">
-          <form ng-if='createAl' ng-submit='addAlbum(album)'>
-              <div class="form-group">
-                  <label >Name:</label>
-                  <input type="text" class="form-control" ng-model='album.name' placeholder="Album Name">
-              </div>
-              <button type="submit" class="btn btn-default" ng-click='hideForm()'>Cancel</button>
-              <button type="submit" class="btn btn-primary"><span class='glyphicon glyphicon-plus-sign'></span></button>
-          </form>
-      </div>
+        <div class="col-xs-4">
+            <button class="btn btn-primary " ng-click='showForm()'>Create New Album</button>
+        </div>
+        <div class="col-xs-8">
+            <form ng-if='createAl' ng-submit='addAlbum(album)'>
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input type="text" class="form-control" ng-model='album.name' placeholder="Album Name">
+                </div>
+                <button type="submit" class="btn btn-default" ng-click='hideForm()'>Cancel</button>
+                <button type="submit" class="btn btn-primary"><span class='glyphicon glyphicon-plus-sign'></span></button>
+            </form>
+        </div>
     </div>
     <br>
     <hr>
