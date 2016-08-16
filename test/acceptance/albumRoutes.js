@@ -11,7 +11,6 @@ const dbUrl = 'mongodb://localhost/photo-album-test';
 
 beforeEach(function(cb) {
     mongoose.connect(dbUrl, function() {
-        // mongoose.connect(dbUrl);
         Album.collection.drop();
         var album = new Album({
             name: 'myalbum'
